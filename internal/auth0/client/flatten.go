@@ -518,6 +518,7 @@ func flattenClient(d *schema.ResourceData, client *management.Client) error {
 		d.Set("organization_usage", client.GetOrganizationUsage()),
 		d.Set("organization_require_behavior", client.GetOrganizationRequireBehavior()),
 		d.Set("web_origins", client.GetWebOrigins()),
+		d.Set("require_pushed_authorization_requests", client.GetRequirePushedAuthorizationRequests()),
 		d.Set("sso", client.GetSSO()),
 		d.Set("sso_disabled", client.GetSSODisabled()),
 		d.Set("cross_origin_auth", client.GetCrossOriginAuth()),
