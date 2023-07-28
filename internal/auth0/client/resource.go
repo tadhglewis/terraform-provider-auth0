@@ -1298,7 +1298,7 @@ func updateClient(ctx context.Context, d *schema.ResourceData, m interface{}) di
 	api := m.(*config.Config).GetAPI()
 
 	if client := expandClient(d); clientHasChange(client) {
-		if client.GetAddons() != nil {
+		if client.GetAddons().String() != "{}" {
 			// In case we are switching addons, we need to be able to clear out the previous config.
 			resetAddons := &management.Client{
 				Addons: &management.ClientAddons{},
